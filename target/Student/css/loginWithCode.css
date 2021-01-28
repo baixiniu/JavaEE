@@ -1,0 +1,16 @@
+div{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+
+    border: aqua 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    height: 40%;
+    width: 40%;
+}
+
+body{
+    background: url("/images/loginWithCode.jpg");
+}

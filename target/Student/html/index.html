@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎来到首页</title>
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+</head>
+<body>
+    <h1>欢迎来到首页</h1>
+    <a href="/jsp/listStudents.jsp">跳转到学生信息列表，用JSP实现</a><br>
+    <a href="/jsp/pageDivide.jsp">JSP实现分页</a><br>
+    <a href="listStudentServlet.html">跳转到学生信息列表，用servlet实现</a><br>
+    <a href="/listStudentServlet">跳转到学生信息列表，使用dispactcherServlet和filter实现<br>
+        其中filter拦截类似/password.jsp的请求，过滤到就将其抛弃,并返回index.html<br>
+        再设置一个过滤器，将上述拦截下来的请求再过滤一次，过滤规则为/jsp/password.jsp<br>
+        在请求通过过滤之后，转发给/listStudentServlet处理<br>
+        </a><br>
+    <div>
+        <button id="getCookieButton">点我获得cookie</button><br>
+        <button id="getSessionButton">点我获得session</button>
+        <a href="/DownloadFileServlet">点我下载图片</a>
+    </div>
+    <div>
+
+    </div>
+</body>
+</html>
+<script src="/js/jquery-3.4.1.js"></script>
+<script>
+    $("#getCookieButton").click(function () {
+        $.ajax({
+            type:"POST",
+            url:"/MyCookie",
+            data:{
+                "username":"zhang",
+                "password":"123456"
+            },
+            success:function (res) {
+                alert(res);
+            },
+        })
+    });
+
+    $("#getSessionButton").click(function () {
+        $.ajax({
+            type:"POST",
+            url:"/MySession",
+            data:{
+                "username":"zhang",
+                "password":"123456"
+            },
+            success:function (res) {
+                alert(res);
+            },
+            error:function () {
+                alert("fail");
+            }
+        })
+    });
+
+</script>
