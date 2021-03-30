@@ -19,7 +19,7 @@ import java.util.List;
 import java.util.UUID;
 
 @WebServlet(name = "UploadHandleServlet_02",urlPatterns = "/UploadHandleServlet_02")
-public class UploadHandleServlet_02 extends HttpServlet {
+public class  UploadHandleServlet_02 extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //得到上传文件的保存目录，将上传的文件存放于WEB-INF目录下，不允许外界直接访问，保证上传文件的安全
